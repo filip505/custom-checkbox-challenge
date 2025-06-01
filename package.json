@@ -1,0 +1,14 @@
+{
+  "name": "custom-checkbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

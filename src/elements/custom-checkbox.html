@@ -1,0 +1,67 @@
+<template id="custom-checkbox-template">
+  <style>
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .checkbox-visible {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      transition: all 0.2s ease;
+      /* Initialize box-shadow for smooth transition */
+      box-shadow: 0 0 0 0px transparent;
+    }
+
+    .checkmark {
+      width: 16px;
+      height: 16px;
+      color: black;
+      display: none;
+    }
+
+    input:checked + .checkbox-visible .checkmark {
+      display: block;
+    }
+
+    input:focus + .checkbox-visible {
+      outline: none; /* Remove the default outline */
+      box-shadow: 0 0 0 2px #2196f3 inset; /* Use inset box-shadow for focus */
+    }
+  </style>
+
+  <label class="custom-checkbox">
+    <input type="checkbox" name="mana2" />
+    <span class="checkbox-visible">
+      <svg
+        class="checkmark"
+        viewBox="0 0 256 256"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="216 72.005 104 184 48 128.005"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        ></polyline>
+      </svg>
+    </span>
+    <slot></slot>
+  </label>
+</template>
